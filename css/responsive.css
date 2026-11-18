@@ -1,0 +1,54 @@
+/* Bake O'Clock — responsive rules */
+@media (max-width:1024px){
+.why,.steps{grid-template-columns:repeat(2,1fr)}
+.foot-grid{grid-template-columns:1fr 1fr}
+.masonry{columns:2}
+.cc-layout{grid-template-columns:1fr}
+.cc-aside{position:static}
+.ig-grid{grid-template-columns:repeat(3,1fr)}
+.quotes{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+:root{--hh:68px}
+.burger{display:block}
+.nav-cta{display:none}
+.nav{position:fixed;inset:var(--hh) 0 0 0;margin:0;padding:2rem 1.5rem;background:var(--ivory);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s,transform .3s var(--ease),visibility .3s;overflow-y:auto}
+body.nav-open .nav{opacity:1;visibility:visible;transform:none}
+.nav ul{flex-direction:column;gap:.5rem}
+.nav a{font:500 2.1rem/1.3 var(--serif);display:inline-block}
+.only-m{display:list-item;margin-top:1.5rem}
+.only-m a{font:500 1rem var(--sans);background:var(--choc);color:var(--ivory);padding:1rem 1.6rem;border-radius:999px}
+.only-m a::after{display:none}
+.hero-grid,.split,.row,.contact-grid{grid-template-columns:1fr}
+.split.rev>:first-child,.row.flip>:first-child{order:0}
+.hero-art{max-width:440px;margin:1.5rem auto 0}
+.hero-art .arch{margin-inline:auto}
+.hero-small{left:-4%}
+.feature-grid{grid-template-columns:1fr}
+.f-main{grid-row:auto}
+.promo .arch{max-width:360px}
+.page-hero h1{max-width:none}
+}
+@media (max-width:700px){
+.fgrid{grid-template-columns:1fr}
+.field{grid-column:1/-1}
+.foot-grid{grid-template-columns:1fr}
+.foot-base{flex-direction:column;gap:.4rem}
+.why,.steps{grid-template-columns:1fr;gap:1.5rem}
+.ig-grid{grid-template-columns:repeat(2,1fr)}
+.f-row{grid-template-columns:110px 1fr;gap:1rem}
+.tb{flex-wrap:wrap}
+.filters{flex-basis:100%}
+.lb[open]{flex-wrap:wrap;align-content:center}
+.lb-stage{width:92vw}
+.lb-prev,.lb-next{order:2}
+.lb-body{order:1;flex-basis:100%}
+.lb-close{top:.75rem;right:.75rem}
+}
+@media (max-width:480px){
+.masonry{columns:1}
+.btn{width:100%}
+.actions .btn,.p-actions .btn{width:auto;flex:1 1 auto}
+.wa-float{font-size:.85rem;padding:.7rem 1rem}
+.sheet{padding:1.25rem}
+}

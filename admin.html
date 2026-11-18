@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Orders | Bake O’Clock Admin</title>
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+  </head>
+  <body class="adm">
+    <section id="login" class="login" hidden>
+      <form id="login-form" class="card" novalidate>
+        <p class="logo"><img src="assets/icons/favicon.svg" width="30" height="30" alt="" />Bake O’Clock</p>
+        <h1 id="login-title">Owner login</h1>
+        <p class="fine" id="login-hint"></p>
+        <div class="field"><label for="pw">Passcode</label><input id="pw" type="password" autocomplete="current-password" /></div>
+        <div class="field" id="pw2-wrap" hidden><label for="pw2">Repeat passcode</label><input id="pw2" type="password" autocomplete="new-password" /></div>
+        <span class="err" id="login-err" role="alert"></span>
+        <button class="btn btn-primary" type="submit" id="login-btn">Open admin</button>
+        <p class="fine">This passcode only keeps casual visitors out. Orders are stored in this browser, not on a server.</p>
+        <button class="linkbtn" type="button" id="forgot">Forgot passcode?</button>
+      </form>
+    </section>
+
+    <div id="app" hidden>
+      <header class="a-head">
+        <div class="wrap a-bar">
+          <p class="logo"><img src="assets/icons/favicon.svg" width="28" height="28" alt="" />Orders</p>
+          <div class="a-tools">
+            <button class="btn btn-primary btn-sm" id="b-import" type="button">Import order</button>
+            <button class="btn btn-ghost btn-sm" id="b-export" type="button">Backup</button>
+            <button class="btn btn-ghost btn-sm" id="b-restore" type="button">Restore</button>
+            <a class="btn btn-ghost btn-sm" href="index.html">View site</a>
+            <button class="btn btn-ghost btn-sm" id="b-lock" type="button">Lock</button>
+            <input type="file" id="restore-file" accept="application/json" hidden />
+          </div>
+        </div>
+      </header>
+      <main class="wrap a-main">
+        <div id="stats" class="stats"></div>
+        <p class="notice">Orders placed in <strong>this browser</strong> appear here instantly. Orders from customers’ phones arrive on WhatsApp: copy the whole message and use <strong>Import order</strong>.</p>
+        <div class="a-filter">
+          <input id="q" type="search" placeholder="Search name, number, order ID…" aria-label="Search orders" />
+          <div id="chips" class="filters" role="group" aria-label="Filter by status"></div>
+        </div>
+        <div id="list" class="o-list"></div>
+      </main>
+    </div>
+
+    <dialog id="dlg" class="sheet wide" aria-labelledby="dlg-t"><div id="dlg-body"></div></dialog>
+    <dialog id="imp" class="sheet" aria-labelledby="imp-t">
+      <div class="sheet-head"><h2 id="imp-t">Import order</h2><button class="icon-btn" type="button" data-close aria-label="Close">×</button></div>
+      <p class="fine">Paste the full WhatsApp order message (or just the line starting <code>BOC1.</code>). You can paste several at once.</p>
+      <textarea id="imp-text" rows="6" aria-label="Order message"></textarea>
+      <span class="err" id="imp-err" role="alert"></span>
+      <div class="actions"><button class="btn btn-primary" id="imp-go" type="button">Add to orders</button></div>
+    </dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <script src="js/orders.js"></script>
+    <script src="js/admin.js"></script>
+  </body>
+</html>

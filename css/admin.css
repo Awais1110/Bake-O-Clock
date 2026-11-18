@@ -1,0 +1,44 @@
+/* Bake O'Clock — admin panel. Reuses tokens and form styles from style.css */
+.adm{min-height:100vh;background:var(--ivory)}
+.login{min-height:100vh;display:grid;place-items:center;padding:1.25rem}
+.card{width:min(420px,100%);background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:2rem;display:grid;gap:1rem}
+.card h1{font-size:2.4rem;margin:0}
+.linkbtn{background:none;border:0;padding:0;color:var(--muted);font:inherit;font-size:.88rem;text-decoration:underline;cursor:pointer;justify-self:start}
+.a-head{position:sticky;top:0;z-index:20;background:rgba(250,247,242,.97);border-bottom:1px solid var(--line)}
+.a-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-block:.8rem}
+.a-bar .logo{font-size:1.5rem}
+.a-tools{display:flex;gap:.5rem;flex-wrap:wrap}
+.a-main{padding-block:1.75rem 4rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.9rem}
+.stat{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:1rem 1.2rem}
+.stat b{display:block;font:500 2.2rem/1 var(--serif)}
+.stat span{font-size:.85rem;color:var(--muted)}
+.stat.hot{background:var(--blush);border-color:transparent}
+.a-filter{display:grid;gap:.8rem;margin:1.5rem 0 1rem}
+input[type=search],input[type=number],input[type=password]{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:12px;background:var(--white);color:var(--choc);font:inherit}
+input[type=search]:focus,input[type=number]:focus,input[type=password]:focus{outline:none;border-color:var(--choc);box-shadow:0 0 0 3px rgba(185,135,98,.35)}
+.filters{flex-wrap:wrap}
+.o-list{display:grid;gap:.7rem}
+.o{display:grid;grid-template-columns:auto 1fr auto;gap:.4rem 1rem;align-items:center;width:100%;text-align:left;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:1rem 1.2rem;font:inherit;color:inherit;cursor:pointer;transition:border-color .2s}
+.o:hover{border-color:var(--choc)}
+.o.is-new{border-left:4px solid var(--caramel)}
+.o .id{font-size:.8rem;color:var(--muted)}
+.o h3{font:600 1.1rem var(--sans);margin:0}
+.o p{margin:0;font-size:.9rem;color:var(--muted)}
+.o .due{font-size:.88rem;text-align:right}
+.badge{display:inline-block;padding:.2rem .7rem;border-radius:999px;font-size:.78rem;font-weight:500;background:var(--cream)}
+.badge.new{background:var(--caramel);color:var(--white)}
+.badge.ready,.badge.delivered{background:#DCE9D5}
+.badge.cancelled{background:#EBD3D3;color:var(--danger)}
+.warn{color:var(--danger);font-weight:500}
+.empty{text-align:center;padding:3rem 1rem;color:var(--muted);background:var(--white);border:1px dashed var(--line);border-radius:16px}
+.sheet.wide{width:min(680px,calc(100% - 2rem))}
+.d-grid{display:grid;grid-template-columns:1fr 1fr;gap:.2rem 1.5rem;margin:1rem 0}
+.d-grid dt{font-size:.8rem;color:var(--muted);margin-top:.6rem}
+.d-grid dd{margin:0}
+.d-grid .full{grid-column:1/-1}
+.d-edit{border-top:1px solid var(--line);padding-top:1rem;margin-top:1rem}
+select{width:100%;padding:.85rem 1rem;border:1px solid var(--line);border-radius:12px;background:var(--white);font:inherit;color:var(--choc)}
+.danger{color:var(--danger);border-color:var(--danger)}
+.toast{position:fixed;left:50%;bottom:1.5rem;transform:translateX(-50%);background:var(--choc);color:var(--ivory);padding:.8rem 1.3rem;border-radius:999px;z-index:200;font-size:.92rem;max-width:calc(100% - 2rem)}
+@media (max-width:640px){.o{grid-template-columns:1fr auto}.o .due{grid-column:1/-1;text-align:left}.d-grid{grid-template-columns:1fr}.a-tools .btn{width:auto}}
